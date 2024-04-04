@@ -1,3 +1,5 @@
+pip install folium streamlit_folium pandas
+
 import streamlit as st
 import folium
 from folium.plugins import MarkerCluster
