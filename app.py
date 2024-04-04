@@ -4,6 +4,11 @@ from folium.plugins import MarkerCluster
 from streamlit_folium import st_folium
 import pandas as pd
 
+# Load file
+
+url = 'https://github.com/samhuang1805/AI_in_public_library/blob/main/AI%20in%20Library_case_repository_for_map.csv'
+library_data_df = pd.read_csv(url)
+
 # Streamlit UI
 st.title('Library Events Map')
 
