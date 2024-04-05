@@ -10,19 +10,48 @@ url = 'https://github.com/samhuang1805/AI_in_public_library/raw/main/AI_in_Libra
 library_data_df = pd.read_excel(url)
 
 # Streamlit UI
-st.title('Library Events Map')
+st.title('AI Programs and Services Offered by Public Libraries')
 
-# Search box
-search_query = st.text_input("Enter search term:", "")
+# Creating time filter
+def display_time_filter(df):
+    year_list = [''] + sorted(list(df['Year'].unique()))
+    return st.sidebar.selectbox('Year', options=year_list)
 
-# Filter data based on search query
+# Creating state filter
+def display_state_filter(df):
+    state_list = [''] + list(df['State'].unique())
+    state_list.sort()
+    return st.sidebar.selectbox('State', state_list)
+
+# Creating search filter
+def display_search_filter():
+    return st.sidebar.text_input("Enter search term:", "")
+
+# Display Filters
+selected_year = display_time_filter(library_data_df)
+selected_state = display_state_filter(library_data_df)
+search_query = display_search_filter()
+
+# Applying filters
+filtered_data = library_data_df
+
+# Filter by year
+if selected_year:
+    filtered_data = filtered_data[filtered_data['Year'] == selected_year]
+
+# Filter by state
+if selected_state:
+    filtered_data = filtered_data[filtered_data['State'] == selected_state]
+    
+# Filter by search query
 if search_query:
-    filtered_data = library_data_df[library_data_df['Library'].str.contains(search_query, case=False, na=False) |
-                                    library_data_df['Event Title'].str.contains(search_query, case=False, na=False) |
-                                    library_data_df['Description'].str.contains(search_query, case=False, na=False)]
-else:
-    filtered_data = library_data_df
+    filtered_data = filtered_data[
+        filtered_data['Library'].str.contains(search_query, case=False, na=False) |
+        filtered_data['Event Title'].str.contains(search_query, case=False, na=False) |
+        filtered_data['Description'].str.contains(search_query, case=False, na=False)
+    ]
 
+### Start to create the interactive map ###
 # Group by library location after filtering
 grouped = filtered_data.groupby(['Latitude', 'Longitude'])
     
@@ -51,9 +80,10 @@ for (lat, lng), group in grouped:
 
         folium.Marker(
             [lat, lng],
-            popup=folium.Popup(popup_content, max_width=300),
+            popup=folium.Popup(popup_content, max_width=600),
             tooltip="Click for more info"
         ).add_to(library_map)
 
-# Display Folium map in Streamlit
-st_folium(library_map, width=725, height=525)
+# Display Folium map in Streamlit with dynamic full-width
+st_folium(library_map, width='100%', height=600)
+
