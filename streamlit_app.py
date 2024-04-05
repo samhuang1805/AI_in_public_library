@@ -9,6 +9,10 @@ import pandas as pd
 url = 'https://github.com/samhuang1805/AI_in_public_library/raw/main/AI_in_Library_case_repository_for_map.xlsx'
 library_data_df = pd.read_excel(url)
 
+# Convert date into year
+library_data_df['Year'] = library_data_df['Date'].apply(lambda x: x.strftime('%Y') if not pd.isnull(x) else x)
+
+
 # Streamlit UI
 st.title('AI Programs and Services Offered by Public Libraries')
 
