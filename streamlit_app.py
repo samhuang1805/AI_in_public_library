@@ -94,9 +94,11 @@ for (lat, lng), group in grouped:
 st_folium(library_map, width='100%', height=600)
 
 
+
 creds_json = st.secrets["service_account"]
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
 client = gspread.authorize(creds)
 
 # Open the sheet
