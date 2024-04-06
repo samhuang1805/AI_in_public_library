@@ -96,7 +96,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict({
   "type": "service_account",
   "project_id": "ai-in-public-library-sheet",
   "private_key_id": "2ac748eed9c920b7701dd53f19fd342d8350ad9f",
-  "private_key": st.secrets["service_account"]["private_key"],
+  "private_key": st.write(st.secrets["service_account"]["private_key"]),
   "client_id": "108920853886427588910",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
