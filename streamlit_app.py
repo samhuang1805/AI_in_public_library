@@ -92,7 +92,7 @@ for (lat, lng), group in grouped:
 st_folium(library_map, width='100%', height=600)
 
 
-st.write(st.secrets["service_account"])
+st.write(st.secrets["service_account"]["project_id"])
 
 # Open the sheet
 sheet = []
