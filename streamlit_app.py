@@ -94,6 +94,7 @@ for (lat, lng), group in grouped:
 st_folium(library_map, width='100%', height=600)
 
 
+# Creating an interactive table to input data
 
 creds_json = st.secrets["service_account"]
 scope = ['https://spreadsheets.google.com/feeds',
@@ -102,10 +103,6 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
 client = gspread.authorize(creds)
 
 # Open the sheet
-sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google Sheet
-
-
-# Open the sheet by name
 sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google Sheet
 
 
