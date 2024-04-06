@@ -120,4 +120,4 @@ with st.sidebar:
 if submit_button:
     # Write data to Google Sheet
     sheet.append_row([lib_name, event_title, descrition, event_page, contact])
-    st.sidebar.success("Data submitted successfully!")
+    st.sidebar.success("Program information submitted successfully!")
