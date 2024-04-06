@@ -93,16 +93,16 @@ st_folium(library_map, width='100%', height=600)
 
 
 creds = ServiceAccountCredentials.from_json_keyfile_dict({
-    "type": "service_account",
-    "project_id": st.write(st.secrets["service_account"]["project_id"]),
-    "private_key_id": st.write(st.secrets["service_account"]["private_key_id"]),
-    "private_key": st.write(st.secrets["service_account"]["private_key"]),
-    "client_email": st.write(st.secrets["service_account"]["client_email"]),
-    "client_id": st.write(st.secrets["service_account"]["client_id"]),
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": st.write(st.secrets["service_account"]["client_x509_cert_url"])
+  "type": "service_account",
+  "project_id": "ai-in-public-library-sheet",
+  "private_key_id": "2ac748eed9c920b7701dd53f19fd342d8350ad9f",
+  "private_key": st.secrets["service_account"]["private_key"],
+  "client_id": "108920853886427588910",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lib-store-acconut%40ai-in-public-library-sheet.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
     }, scope)
 
 client = gspread.authorize(creds)
