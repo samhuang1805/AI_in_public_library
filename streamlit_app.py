@@ -3,6 +3,8 @@ import folium
 from folium.plugins import MarkerCluster
 from streamlit_folium import st_folium
 import pandas as pd
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 # Load file
 
@@ -91,10 +93,10 @@ for (lat, lng), group in grouped:
 # Display Folium map in Streamlit with dynamic full-width
 st_folium(library_map, width='100%', height=600)
 
+
+creds_json = st.secrets["service_account"]
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
-
-
 client = gspread.authorize(creds)
 
 # Open the sheet
