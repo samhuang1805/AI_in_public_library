@@ -91,6 +91,7 @@ for (lat, lng), group in grouped:
 # Display Folium map in Streamlit with dynamic full-width
 st_folium(library_map, width='100%', height=600)
 
+# Create table for input
 creds_json = st.secrets["gcp_service_account"]
 
 # Use creds to create a client to interact with the Google Drive API
