@@ -92,10 +92,24 @@ for (lat, lng), group in grouped:
 st_folium(library_map, width='100%', height=600)
 
 
-st.write(st.secrets["service_account"]["project_id"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict({
+    "type": "service_account",
+    "project_id": st.secrets["service_account"]["project_id"],
+    "private_key_id": st.secrets["service_account"]["private_key_id"],
+    "private_key": st.secrets["service_account"]["private_key"],
+    "client_email": st.secrets["service_account"]["client_email"],
+    "client_id": st.secrets["service_account"]["client_id"],
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": st.secrets["service_account"]["client_x509_cert_url"]
+    }, scope)
+
+client = gspread.authorize(creds)
 
 # Open the sheet
-sheet = []
+sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google Sheet
+
 
 # Create input fields in the sidebar
 with st.sidebar:
