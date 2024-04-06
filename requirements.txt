@@ -2,3 +2,5 @@ folium==0.16.0
 streamlit-folium==0.18.0
 pandas==2.0.3
 openpyxl==3.0.10
+gspread==6.1.0
+oauth2client==4.1.3
