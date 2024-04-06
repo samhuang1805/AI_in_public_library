@@ -108,8 +108,6 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict({
     "client_x509_cert_url": st.secrets["service_account"]["client_x509_cert_url"]
     }, scope)
 
-# Use creds to create a client to interact with the Google Drive API
-creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
 client = gspread.authorize(creds)
 
 # Open the sheet
