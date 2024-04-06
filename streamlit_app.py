@@ -91,3 +91,29 @@ for (lat, lng), group in grouped:
 # Display Folium map in Streamlit with dynamic full-width
 st_folium(library_map, width='100%', height=600)
 
+creds_json = st.secrets["gcp_service_account"]
+
+# Use creds to create a client to interact with the Google Drive API
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
+client = gspread.authorize(creds)
+
+# Open the sheet
+sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google Sheet
+
+# Create input fields in the sidebar
+with st.sidebar:
+    st.header("Share programs in your library!")
+    lib_name = st.text_input("Library name")
+    event_title = st.text_input("Program title")
+    descrition = st.text_area("Description of program")
+    event_page = st.text_input("Program page")
+    contact = st.text_input("Contact information")
+    submit_button = st.button('Submit')
+
+# When the submit button is pressed
+if submit_button:
+    # Write data to Google Sheet
+    sheet.append_row([lib_name, event_title, descrition, event_page, contact])
+    st.sidebar.success("Data submitted successfully!")
