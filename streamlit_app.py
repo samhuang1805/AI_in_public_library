@@ -91,6 +91,7 @@ for (lat, lng), group in grouped:
 # Display Folium map in Streamlit with dynamic full-width
 st_folium(library_map, width='100%', height=600)
 
+st.write(st.secrets["service_account"]["private_key"])
 
 creds = ServiceAccountCredentials.from_json_keyfile_dict({
   "type": "service_account",
