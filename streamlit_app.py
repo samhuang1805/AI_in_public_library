@@ -91,11 +91,24 @@ for (lat, lng), group in grouped:
 # Display Folium map in Streamlit with dynamic full-width
 st_folium(library_map, width='100%', height=600)
 
-creds_json = st.secrets["gcp_service_account"]
-
-# Use creds to create a client to interact with the Google Drive API
+# Creating input into google sheet
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
+
+creds = ServiceAccountCredentials.from_json_keyfile_dict({
+    "type": "service_account",
+    project_id = st.secrets["project_id"]
+    private_key_id = st.secrets["private_key_id"]
+    private_key = st.secrets["private_key"]
+    client_email = st.secrets["client_email"]
+    client_id = st.secrets["client_id"]
+    auth_uri = "https://accounts.google.com/o/oauth2/auth"
+    token_uri = "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url = st.secrets["client_x509_cert_url]
+    }, scope)
+
+# Use creds to create a client to interact with the Google Drive API
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scope)
 client = gspread.authorize(creds)
 
