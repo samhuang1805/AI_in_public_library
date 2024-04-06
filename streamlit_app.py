@@ -97,14 +97,14 @@ scope = ['https://spreadsheets.google.com/feeds',
 
 creds = ServiceAccountCredentials.from_json_keyfile_dict({
     "type": "service_account",
-    "project_id" : st.secrets["project_id"]
-    "private_key_id" : st.secrets["private_key_id"]
-    "private_key" : st.secrets["private_key"]
-    "client_email" : st.secrets["client_email"]
-    "client_id" : st.secrets["client_id"]
-    "auth_uri" : "https://accounts.google.com/o/oauth2/auth"
-    "token_uri" : "https://oauth2.googleapis.com/token"
-    "auth_provider_x509_cert_url" : "https://www.googleapis.com/oauth2/v1/certs"
+    "project_id" : st.secrets["project_id"],
+    "private_key_id" : st.secrets["private_key_id"],
+    "private_key" : st.secrets["private_key"],
+    "client_email" : st.secrets["client_email"],
+    "client_id" : st.secrets["client_id"],
+    "auth_uri" : "https://accounts.google.com/o/oauth2/auth",
+    "token_uri" : "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url" : "https://www.googleapis.com/oauth2/v1/certs",
     "client_x509_cert_url" : st.secrets["client_x509_cert_url"]
     }, scope)
 
