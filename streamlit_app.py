@@ -8,8 +8,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 # Load file
 
-url = 'https://github.com/samhuang1805/AI_in_public_library/raw/main/AI_in_Library_case_repository_for_map.xlsx'
-library_data_df = pd.read_excel(url)
+url = 'https://github.com/samhuang1805/AI_in_public_library/raw/main/AI_in_Library_case_repository_for_map.csv'
+library_data_df = pd.read_csv(url)
 
 # Convert date into year
 library_data_df['Year'] = library_data_df['Date'].apply(lambda x: x.strftime('%Y') if not pd.isnull(x) else x)
