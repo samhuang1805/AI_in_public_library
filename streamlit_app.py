@@ -116,12 +116,7 @@ event_page = st.text_input("Program page", key="event_page")
 contact = st.text_input("Contact information", key="contact")
 submit_button = st.button('Submit', key="submit")
 
+# When the submit button is pressed
 if submit_button:
     sheet.append_row([lib_name, event_title, descrition, event_page, contact])
     st.success("Program information submitted successfully!")
-
-# When the submit button is pressed
-if submit_button:
-    # Write data to Google Sheet
-    sheet.append_row([lib_name, event_title, descrition, event_page, contact])
-    st.sidebar.success("Data submitted successfully!")
