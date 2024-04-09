@@ -117,7 +117,8 @@ contact = st.text_input("Contact information")
 submit_button = st.button('Submit')
 
 # When the submit button is pressed
- timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') # adding a time tage
+timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') # adding a time stamp
+
 if submit_button:
     sheet.append_row([timestamp, lib_name, event_title, descrition, event_page, contact])
     st.success("Program information submitted successfully!")
