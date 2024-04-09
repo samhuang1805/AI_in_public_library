@@ -106,18 +106,22 @@ client = gspread.authorize(creds)
 sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google Sheet
 
 
-# Create input fields in the sidebar
-with st.sidebar:
-    st.header("Share programs in your library!")
-    lib_name = st.text_input("Library name")
-    event_title = st.text_input("Program title")
-    descrition = st.text_area("Description of program")
-    event_page = st.text_input("Program page")
-    contact = st.text_input("Contact information")
-    submit_button = st.button('Submit')
+# Create input fields in the below space
+st.header("Tell us about AI programs in your library")
+st.subheader('Provide the information on AI programs in your library to help us refine this map!')
+lib_name = st.text_input("Library name", key="lib_name")
+event_title = st.text_input("Program title", key="event_title")
+description = st.text_area("Description of program", key="description")
+event_page = st.text_input("Program page", key="event_page")
+contact = st.text_input("Contact information", key="contact")
+submit_button = st.button('Submit', key="submit")
+
+if submit_button:
+    sheet.append_row([lib_name, event_title, descrition, event_page, contact])
+    st.success("Program information submitted successfully!")
 
 # When the submit button is pressed
 if submit_button:
     # Write data to Google Sheet
     sheet.append_row([lib_name, event_title, descrition, event_page, contact])
-    st.sidebar.success("Program information submitted successfully!")
+    st.sidebar.success("Data submitted successfully!")
