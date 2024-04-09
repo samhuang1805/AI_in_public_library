@@ -120,7 +120,7 @@ if submit_button:
    # Get the current time as a timestamp
     timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     # Include the timestamp with the submission data
-    submission_data = [lib_name, event_title, description, event_page, contact, timestamp]
+    submission_data = [timestamp, lib_name, event_title, description, event_page, contact]
     # Assuming 'sheet' is your Google Sheet where data is written
     sheet.append_row(submission_data)
     st.success("Program information submitted successfully!")
