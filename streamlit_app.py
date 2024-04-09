@@ -117,9 +117,5 @@ contact = st.text_input("Contact information")
 submit_button = st.button('Submit')
 
 if submit_button:
-   # Get the current time as a timestamp
-    # Include the timestamp with the submission data
-    submission_data = [lib_name, event_title, description, event_page, contact]
-    # Assuming 'sheet' is your Google Sheet where data is written
-    sheet.append_row(submission_data)
+    sheet.append_row([lib_name, event_title, descrition, event_page, contact])
     st.success("Program information submitted successfully!")
