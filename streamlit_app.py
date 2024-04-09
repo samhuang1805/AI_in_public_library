@@ -116,9 +116,11 @@ event_page = st.text_input("Program page")
 contact = st.text_input("Contact information")
 submit_button = st.button('Submit')
 
-# When the submit button is pressed
-timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') # adding a time stamp
-
 if submit_button:
-    sheet.append_row([timestamp, lib_name, event_title, descrition, event_page, contact])
+   # Get the current time as a timestamp
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    # Include the timestamp with the submission data
+    submission_data = [lib_name, event_title, description, event_page, contact, timestamp]
+    # Assuming 'sheet' is your Google Sheet where data is written
+    sheet.append_row(submission_data)
     st.success("Program information submitted successfully!")
