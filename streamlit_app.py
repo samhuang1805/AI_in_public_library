@@ -83,7 +83,7 @@ for (lat, lng), group in grouped:
 
         folium.Marker(
             [lat, lng],
-            popup=folium.Popup(popup_content, max_width=600),
+            popup=folium.Popup(popup_content, max_width=750),
             tooltip="Click for more info"
         ).add_to(library_map)
 
