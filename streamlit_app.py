@@ -17,7 +17,6 @@ library_data_df['Year'] = library_data_df['Date'].apply(lambda x: x.strftime('%Y
 
 
 # Streamlit UI
-st.set_page_config(layout="wide")
 st.title('AI Programs and Services Offered by Public Libraries')
 
 # Creating time filter
