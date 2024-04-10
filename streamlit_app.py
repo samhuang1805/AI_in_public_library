@@ -17,6 +17,7 @@ library_data_df['Year'] = library_data_df['Date'].apply(lambda x: x.strftime('%Y
 
 
 # Streamlit UI
+st.set_page_config(layout="wide")
 st.title('AI Programs and Services Offered by Public Libraries')
 
 # Creating time filter
@@ -89,7 +90,6 @@ for (lat, lng), group in grouped:
         ).add_to(library_map)
 
 # Display Folium map in Streamlit with dynamic full-width
-st.set_page_config(layout="wide")
 st_folium(library_map, width='100%', height=750)
 
 
