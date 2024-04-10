@@ -89,6 +89,7 @@ for (lat, lng), group in grouped:
         ).add_to(library_map)
 
 # Display Folium map in Streamlit with dynamic full-width
+st.set_page_config(layout="wide")
 st_folium(library_map, width='100%', height=750)
 
 
