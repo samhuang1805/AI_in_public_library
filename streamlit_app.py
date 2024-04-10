@@ -62,7 +62,7 @@ if search_query:
 grouped = filtered_data.groupby(['Latitude', 'Longitude'])
     
 # Initialize the folium map
-library_map = folium.Map(location=[40.7128, -74.0060], zoom_start=2)        
+library_map = folium.Map(location=[40.7128, -74.0060], zoom_start=4)        
 
 # Iterate over each group (unique location) and create a popup with all cases for that location
 for (lat, lng), group in grouped:
@@ -88,7 +88,7 @@ for (lat, lng), group in grouped:
         ).add_to(library_map)
 
 # Display Folium map in Streamlit with dynamic full-width
-st_folium(library_map, width='100%', height=600)
+st_folium(library_map, width='100%', height='100%')
 
 
 # Creating an interactive table to input data
