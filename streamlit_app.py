@@ -107,16 +107,17 @@ sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google S
 
 # Create input fields in the below space
 st.header("Tell us about AI programs in your library")
-st.subheader('Provide the information on AI programs in your library to help us refine this map!')
+st.subheader('If you have further information about any of the programs/services on the map or you want to share a new program/service, please fill the fields below.')
 lib_name = st.text_input("Library name")
 event_title = st.text_input("Program title")
-descrition = st.text_area("Description of program")
+description = st.text_area("Description of program")
 event_page = st.text_input("Program page")
 contact = st.text_input("Contact information")
+Others = st.text_area("Other Information")
 submit_button = st.button('Submit')
 
 if submit_button:
     current_time = datetime.datetime.now()
     formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')  # Format as 'YYYY-MM-DD HH:MM:SS'
-    sheet.append_row([formatted_time, lib_name, event_title, descrition, event_page, contact])
+    sheet.append_row([formatted_time, lib_name, event_title, description, event_page, contact, Others])
     st.success("Program information submitted successfully!")
