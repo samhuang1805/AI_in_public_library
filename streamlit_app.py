@@ -103,7 +103,7 @@ client = gspread.authorize(creds)
 
 # Open the sheet
 sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google Sheet
-
+ 
 
 # Create input fields in the below space
 st.header("Tell us about AI programs in your library")
