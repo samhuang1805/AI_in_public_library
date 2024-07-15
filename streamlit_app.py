@@ -90,7 +90,7 @@ for (lat, lng), group in grouped:
         ).add_to(library_map)
 
 # Display Folium map in Streamlit with dynamic full-width
-library_map
+st_folium(library_map)
 
 
 # Creating an interactive table to input data
