@@ -1,7 +1,7 @@
 import streamlit as st
 import folium
 from folium.plugins import MarkerCluster
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 import pandas as pd
 import gspread
 import datetime
@@ -90,7 +90,7 @@ for (lat, lng), group in grouped:
         ).add_to(library_map)
 
 # Display Folium map in Streamlit with dynamic full-width
-folium_static(library_map, width='100%', height=1200)
+st_folium(library_map, width='100%', height=1200)
 
 
 # Creating an interactive table to input data
