@@ -90,22 +90,8 @@ for (lat, lng), group in grouped:
         ).add_to(library_map)
 
 
-# Define the width and height
-width = 800  # width in pixels
-height = 1200  # height in pixels
-
-# Use HTML to set the size of the map container
-map_html = f"""
-    <div style="width: {width}px; height: {height}px;">
-        {m._repr_html_()}
-    </div>
-"""
-
-# Display the map with custom width and height
-st.components.v1.html(map_html, width=width, height=height)
-
 # Display Folium map in Streamlit with dynamic full-width
-##folium_static(library_map)
+folium_static(library_map)
 
 
 # Creating an interactive table to input data
