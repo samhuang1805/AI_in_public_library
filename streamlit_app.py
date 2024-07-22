@@ -35,6 +35,10 @@ def display_state_filter(df):
 def display_search_filter():
     return st.sidebar.text_input("Enter search term:", "")
 
+# Adding text to the sidebar
+st.sidebar.markdown("## Filter the data:")
+st.sidebar.write("Use the filters below to narrow down the AI programs and services shown on the map.")
+
 # Display Filters
 selected_year = display_time_filter(library_data_df)
 selected_state = display_state_filter(library_data_df)
