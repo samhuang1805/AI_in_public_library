@@ -2,7 +2,7 @@ streamlit>=1.32.2
 folium==0.12.1
 streamlit-folium
 pandas
-openpyxl==3.0.10
+openpyxl
 gspread==5.0.0
 oauth2client==4.1.3
 numpy
