@@ -126,10 +126,10 @@ if submit_button:
 
 social_links_html = """
 <div style='text-align: center;'>
-    <a href='https://twitter.com/your_twitter_profile' target='_blank'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg' alt='Twitter' style='width:32px;height:32px;margin:0 10px;'>
+    <a href='https://twitter.com/CTGUAlbany' target='_blank'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg' alt='Twitter' style='width:32px;height:32px;margin:0 10px;'>
     </a>
-    <a href='https://linkedin.com/in/your_linkedin_profile' target='_blank'>
+    <a href='https://www.linkedin.com/company/ctg-ualbany/' target='_blank'>
         <img src='https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg' alt='LinkedIn' style='width:32px;height:32px;margin:0 10px;'>
     </a>
 </div>
