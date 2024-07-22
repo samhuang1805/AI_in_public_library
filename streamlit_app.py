@@ -35,8 +35,6 @@ def display_state_filter(df):
 def display_search_filter():
     return st.sidebar.text_input("Enter search term:", "")
 
-st.markdown("check out this [link](%s)" % url)
-
 # Display Filters
 selected_year = display_time_filter(library_data_df)
 selected_state = display_state_filter(library_data_df)
@@ -124,3 +122,6 @@ if submit_button:
     formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')  # Format as 'YYYY-MM-DD HH:MM:SS'
     sheet.append_row([formatted_time, lib_name, event_title, description, event_page, contact, Others])
     st.success("Program information submitted successfully!")
+
+
+st.markdown("check out this [link](%s)" % url)
