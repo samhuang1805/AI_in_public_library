@@ -64,7 +64,7 @@ if search_query:
 grouped = filtered_data.groupby(['Latitude', 'Longitude'])
     
 # Initialize the folium map
-library_map = folium.Map(location=[41.266, -96.068], zoom_start=4)        
+library_map = folium.Map(location=[41.266, -96.068], zoom_start=5)        
 
 # Iterate over each group (unique location) and create a popup with all cases for that location
 for (lat, lng), group in grouped:
