@@ -91,7 +91,7 @@ for (lat, lng), group in grouped:
 
 
 # Display Folium map in Streamlit with dynamic full-width
-folium_static(library_map)
+st_folium(library_map)
 
 
 # Creating an interactive table to input data
