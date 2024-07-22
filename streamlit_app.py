@@ -15,19 +15,6 @@ library_data_df = pd.read_excel(url)
 # Convert date into year
 library_data_df['Year'] = library_data_df['Date'].apply(lambda x: x.strftime('%Y') if not pd.isnull(x) else x)
 
-# Adding social media links with icons
-social_links_html = """
-<div style='text-align: center;'>
-    <a href='https://twitter.com/your_twitter_profile' target='_blank'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg' alt='Twitter' style='width:32px;height:32px;margin:0 10px;'>
-    </a>
-    <a href='https://linkedin.com/in/your_linkedin_profile' target='_blank'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg' alt='LinkedIn' style='width:32px;height:32px;margin:0 10px;'>
-    </a>
-</div>
-"""
-st.markdown(social_links_html, unsafe_allow_html=True)
-
 
 # Streamlit UI
 st.set_page_config(layout="wide")
