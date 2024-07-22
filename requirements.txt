@@ -1,5 +1,5 @@
 streamlit>=1.13.0
-#folium==0.12.1
+folium>=0.12.1
 streamlit-folium==0.9.0
 StrEnum==0.4.15
 pandas==1.3.3
@@ -10,4 +10,4 @@ numpy==1.21.0
 jinja2
 branca
 geopandas
-folium>=0.13,!=0.15.0
+
