@@ -124,4 +124,5 @@ if submit_button:
     st.success("Program information submitted successfully!")
 
 
+st.markdown("check out this [link](%s)" % URL)
 st.markdown("check out this [link](%s)" % url)
