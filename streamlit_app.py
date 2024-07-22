@@ -125,4 +125,4 @@ if submit_button:
 
 
 st.markdown("check out this [link](%s)" % URL)
-st.markdown("check out this [link](%s)" % url)
+st.markdown("check out this test [link](%s)" % url)
