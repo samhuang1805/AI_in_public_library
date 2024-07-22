@@ -127,7 +127,7 @@ if submit_button:
 social_links_html = """
 <div style='text-align: center;'>
     <a href='https://www.ctg.albany.edu/' target='_blank'>
-        <img src='https://www.ctg.albany.edu/media/images/UAlbany_CTG_Logo__A1_Gold_White.png' alt='CTG-logo' style='width:32px;height:32px;margin:0 10px;'>
+        <img src='https://media.licdn.com/dms/image/D4E0BAQFVSVlZhcDIFw/company-logo_200_200/0/1693395291995?e=2147483647&v=beta&t=CWHo7yPFoN2eyabf5o4jb40sqSiT7EZkAtL8_9PCHtI' alt='CTG-logo' style='width:32px;height:32px;margin:0 10px;'>
     <a href='https://www.urbanlibraries.org/' target='_blank'>
         <img src='https://www.urbanlibraries.org/cpresources/rebrand/logo/logo-white.png?d=1524684352' alt='ULC-logo' style='width:32px;height:32px;margin:0 10px;'>
     <a href='https://twitter.com/CTGUAlbany' target='_blank'>
