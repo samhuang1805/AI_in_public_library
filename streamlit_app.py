@@ -123,7 +123,7 @@ if submit_button:
     sheet.append_row([formatted_time, lib_name, event_title, description, event_page, contact, Others])
     st.success("Program information submitted successfully!")
 
-
+# Adding social media links with icons
 social_links_html = """
 <div style='text-align: center;'>
     <a href='https://www.ctg.albany.edu/' target='_blank'>
