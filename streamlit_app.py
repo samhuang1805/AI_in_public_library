@@ -35,6 +35,8 @@ def display_state_filter(df):
 def display_search_filter():
     return st.sidebar.text_input("Enter search term:", "")
 
+st.markdown("check out this [link](%s)" % url)
+
 # Display Filters
 selected_year = display_time_filter(library_data_df)
 selected_state = display_state_filter(library_data_df)
