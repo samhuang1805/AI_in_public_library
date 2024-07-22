@@ -126,7 +126,7 @@ if submit_button:
 
 social_links_html = """
 <div style='text-align: center;'>
-    <a href='https://twitter.com/CTGUAlbany' target='_blank'>
+    <a href='https://www.urbanlibraries.org/' target='_blank'>
         <img src='https://www.urbanlibraries.org/cpresources/rebrand/logo/logo-white.png?d=1524684352' alt='ULC-logo' style='width:32px;height:32px;margin:0 10px;'>
     <a href='https://twitter.com/CTGUAlbany' target='_blank'>
         <img src='https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg' alt='X-logo' style='width:32px;height:32px;margin:0 10px;'>
