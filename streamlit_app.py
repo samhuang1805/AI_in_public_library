@@ -37,7 +37,7 @@ def display_search_filter():
 
 # Adding text to the sidebar
 st.sidebar.markdown("## Data Filter:")
-st.sidebar.write("Use the filters below to narrow down the AI programs and services shown on the map. If you encounter any issues, please feel free to contact program assistant Zong-Xian Huang (zhuang7@albany.edu)")
+st.sidebar.write("Use the filters below to narrow down the AI programs and services shown on the map. If you encounter any issues, please feel free to contact program assistant Zong-Xian Huang (zhuang7@albany.edu).")
 
 # Display Filters
 selected_year = display_time_filter(library_data_df)
