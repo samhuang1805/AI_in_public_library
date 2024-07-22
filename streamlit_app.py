@@ -124,5 +124,14 @@ if submit_button:
     st.success("Program information submitted successfully!")
 
 
-st.markdown("check out this [link](%s)" % URL)
-st.markdown("check out this test [link](%s)" % url)
+social_links_html = """
+<div style='text-align: center;'>
+    <a href='https://twitter.com/your_twitter_profile' target='_blank'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg' alt='Twitter' style='width:32px;height:32px;margin:0 10px;'>
+    </a>
+    <a href='https://linkedin.com/in/your_linkedin_profile' target='_blank'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg' alt='LinkedIn' style='width:32px;height:32px;margin:0 10px;'>
+    </a>
+</div>
+"""
+st.markdown(social_links_html, unsafe_allow_html=True)
