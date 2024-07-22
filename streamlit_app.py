@@ -1,7 +1,7 @@
 import streamlit as st
 import folium
 from folium.plugins import MarkerCluster
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium, folium_static
 import pandas as pd
 import gspread
 import datetime
