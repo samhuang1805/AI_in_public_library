@@ -20,7 +20,7 @@ library_data_df['Year'] = library_data_df['Date'].apply(lambda x: x.strftime('%Y
 st.set_page_config(layout="wide")
 
 social_links_html = """
-<div style='text-align: right;'>
+<div style='text-align: left;'>
     <a href='https://www.ctg.albany.edu/' target='_blank'>
         <img src='https://media.licdn.com/dms/image/D4E0BAQFVSVlZhcDIFw/company-logo_200_200/0/1693395291995?e=2147483647&v=beta&t=CWHo7yPFoN2eyabf5o4jb40sqSiT7EZkAtL8_9PCHtI' alt='CTG-logo' style='width:128px;height:128px;margin:0 10px;'>
     <a href='https://www.urbanlibraries.org/' target='_blank'>
