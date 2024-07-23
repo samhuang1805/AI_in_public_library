@@ -127,6 +127,7 @@ sheet = client.open("AI-library-response-sheet").sheet1  # Name of your Google S
 st.header("Tell us about AI programs in your library")
 st.subheader('If you have further information about any of the programs/services on the map or you want to share a new program/service, please fill the fields below.')
 lib_name = st.text_input("Library name")
+lib_address = st.text_input("Library main address")
 event_title = st.text_input("Program title")
 description = st.text_area("Description of program")
 event_page = st.text_input("Program page")
@@ -137,7 +138,7 @@ submit_button = st.button('Submit')
 if submit_button:
     current_time = datetime.datetime.now()
     formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')  # Format as 'YYYY-MM-DD HH:MM:SS'
-    sheet.append_row([formatted_time, lib_name, event_title, description, event_page, contact, Others])
+    sheet.append_row([formatted_time, lib_name, lib_address, event_title, description, event_page, contact, Others])
     st.success("Program information submitted successfully!")
 
 # Adding social media links with icons
